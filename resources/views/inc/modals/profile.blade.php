@@ -12,20 +12,20 @@
                 <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="text" name="first_name" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }} form-control-user" id="first_name" placeholder="First Name" v-model="name">
+                        <input type="text" name="first_name" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }} form-control-user" id="first_name" placeholder="First Name" value="{{ Auth::user()->first_name }}">
                             @if($errors->has('first_name'))
                                 <span class="text-danger small">&emsp;&nbsp;{{ $errors->first('first_name') }}</span>
                             @endif
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" name="last_name" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }} form-control-user" id="last_ame" placeholder="Last Name">
+                            <input type="text" name="last_name" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }} form-control-user" id="last_ame" placeholder="Last Name" value="{{ Auth::user()->last_name }}">
                             @if($errors->has('last_name'))
                                 <span class="text-danger small">&emsp;&nbsp;{{ $errors->first('last_name') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-user" id="email" placeholder="Email Address">
+                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-user" id="email" placeholder="Email Address" value="{{ Auth::user()->email }}">
                         @if($errors->has('email'))
                             <span class="text-danger small">&emsp;&nbsp;{{ $errors->first('email') }}</span>
                         @endif
